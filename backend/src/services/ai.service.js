@@ -1,7 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: "YOUR_API_KEY" });
-
+const ai = new GoogleGenAI( process.env.GOOGLE_GEMINI_KEY, );
+const model = ai.models.get("gemini-2.5-flash"); 
 async function main() {
   const response = await ai.models.generateContent({
     model: "gemini-2.5-flash",
